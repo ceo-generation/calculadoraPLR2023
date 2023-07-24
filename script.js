@@ -9,10 +9,10 @@ const faixas = [
 
 const faixasSegundoSemestre = [
     { limite: 7407.11, aliquota: 0.0, parcelaDeduzir: 0 },
-    { limite: 9922.28, aliquota: 0.075, parcelaDeduzir: 500.82 },
-    { limite: 13167, aliquota: 0.15, parcelaDeduzir: 1244.99 },
-    { limite: 16380.38, aliquota: 0.225, parcelaDeduzir: 2232.51 },
-    { limite: Infinity, aliquota: 0.275, parcelaDeduzir: 3051.53 }
+    { limite: 9922.28, aliquota: 0.075, parcelaDeduzir: 555.53 },
+    { limite: 13167, aliquota: 0.15, parcelaDeduzir: 1299.70 },
+    { limite: 16380.38, aliquota: 0.225, parcelaDeduzir: 2287.23 },
+    { limite: Infinity, aliquota: 0.275, parcelaDeduzir: 3106.25 }
   ];
 
 
