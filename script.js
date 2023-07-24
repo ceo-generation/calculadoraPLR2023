@@ -75,8 +75,8 @@ function calculaPLR_semestre_1() {
     let impostoFormatado = (impostoDeRenda1).toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
-        minimumFractionDigits: 3,
-        maximumFractionDigits: 3
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
     });
 
     // Exibe o resultado na página
@@ -155,8 +155,8 @@ function calculaPLR_semestre_2() {
     let impostoFormatado = (impostoDeRenda2).toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL',
-        minimumFractionDigits: 3,
-        maximumFractionDigits: 3
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
     });
 
 
