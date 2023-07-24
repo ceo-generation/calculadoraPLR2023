@@ -1,0 +1,259 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E3DCD2;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    height: 100vh; /* Define a altura total da página */
+    margin: 0;
+  }  
+  
+  .container {
+    width: 320px; /* Reduzindo a largura em 20% */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centralizar o conteúdo */
+  }
+  
+  .container h2 {
+    text-align: center; /* Alinhar ao centro */
+    margin: 30px 1px 40px 1px;
+  }
+  
+  .container h2 label {
+    color: #999999;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    margin: -11px 0px 10px 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 40px; /* Dobrar a distância vertical */
+  }
+  
+  .form-group label {
+    display: inline-block; /* Torna o label inline */
+    width: 120px; /* Define uma largura fixa para o label */
+    font-weight: bold;
+    text-align: left; /* Alinhado à esquerda */
+    vertical-align: middle; /* Centraliza verticalmente */
+  }
+  
+  .form-group input {
+    width: 60%; /* Reduzindo o tamanho em 15% */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    vertical-align: middle; /* Centraliza verticalmente com o label */
+  }
+  
+  .form-wrapper {
+    display: flex;
+    gap: 3.5em;
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center;
+  }
+  
+  .form-group::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #eee; /* Cinza levemente mais claro */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .form-group:last-child::after {
+    display: none; /* Ocultar a linha depois do último form-group */
+  }
+  
+  .valor-total-plr {
+    text-align: left;
+    font-weight: bold; /* Adiciona negrito */
+  }
+  
+  .form-group.btn-calcular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-group.btn-calcular button {
+    background-color: #E74D3D;
+    color: #fff;
+    cursor: pointer;
+    width: 70%;
+    height: 48px;
+    margin: auto; /* Alinhar ao centro */
+    display: block; /* Remover o comportamento inline */
+    border: none; /* Remover a borda */
+    outline: none; /* Remover o contorno ao focar */
+  }
+  
+  .form-group.btn-calcular button:hover {
+    background-color: #E74D3D;
+  }
+  
+  #resultado1 {
+    display: inline-block;
+    text-align: right;
+    width: 67%;
+  }
+  
+  #resultado2 {
+    display: inline-block;
+    text-align: right;
+    width: 67%;
+  }
+  
+  #parcelaSpan {
+    display: inline-block;
+    text-align: right;
+    width: 60%;
+  }
+  
+  #aliquotaSpan {
+    display: inline-block;
+    text-align: right;
+    width: 60%;
+  }
+  
+  #parcelaSpan2 {
+    display: inline-block;
+    text-align: right;
+    width: 60%;
+  }
+  
+  #aliquotaSpan2 {
+    display: inline-block;
+    text-align: right;
+    width: 60%;
+  }
+  
+  #imposto-renda1{
+    display: inline-block;
+    text-align: right;
+    font-weight: normal;
+    width: 60%;
+    color: #E74D3D;
+  }
+  
+  #imposto-renda2{
+    display: inline-block;
+    text-align: right;
+    font-weight: normal;
+    width: 60%;
+    color: #E74D3D;
+  }
+
+  #plr-periodo-1{
+    display: inline-block;
+    text-align: right;
+    font-weight: normal;
+    width: 60%;
+  }
+
+  #plr-periodo-2{
+    display: inline-block;
+    text-align: right;
+    font-weight: normal;
+    width: 60%;
+  }
+
+  #plr-total{
+    display: inline-block;
+    text-align: right;
+    font-weight: normal;
+    width: 60%;
+  }
+
+  #imposto-renda-total{
+    display: inline-block;
+    text-align: right;
+    font-weight: normal;
+    width: 60%;
+    color: #E74D3D;
+  }
+
+  #plr-liquido-total{
+    display: inline-block;
+    text-align: right;
+    width: 67%;
+  }
+
+  
+  .form-group-deducao {
+    
+    text-align: left;
+    font-weight: normal;
+  }
+  
+  .align-right {
+    text-align: right;
+  }
+  
+  .label-parcela {
+    padding-bottom: 17px;
+    font-weight: normal;
+  }
+  
+  #imposto-renda1 {
+    display: inline-block;
+    text-align: right;
+    width: 60%;
+  }
+
+
+.explicacao-calculos {
+    /* Estilize o texto explicativo conforme desejar */
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 800px; /* Defina a largura máxima para que o texto não fique muito largo */
+    margin: 0 auto; /* Centralize horizontalmente */
+}
+
+.tabela-referencia-2023 {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.tabela-referencia-2023 th, .tabela-referencia-2023 td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.tabela-referencia-2023 th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.tabela-referencia-2023 th:first-child, .tabela-referencia-2023 td:first-child {
+    width: 40%; /* Defina a largura da primeira coluna */
+}
+
+.tabela-referencia-2023 th:nth-child(2), .tabela-referencia-2023 td:nth-child(2) {
+    width: 30%; /* Defina a largura da segunda coluna */
+}
+
+.tabela-referencia-2023 th:nth-child(3), .tabela-referencia-2023 td:nth-child(3) {
+    width: 15%; /* Defina a largura da terceira coluna */
+}
+
+.tabela-referencia-2023 th:nth-child(4), .tabela-referencia-2023 td:nth-child(4) {
+    width: 15%; /* Defina a largura da quarta coluna */
+}
+
+.tabela-referencia-2023 tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabela-referencia-2023 tr:hover {
+    background-color: #e1e1e1;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora PLR Líquido</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <main>       
+        <section>
+            <div class="form-wrapper">
+                <div class="container">
+                    <h2>Primeira Parcela <label>(MAR/2023)</label></h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="plr1">PLR Bruto:</label>
+                            <input type="text" id="plr1" name="plr1" oninput="formatarValor(this)" required value="0,00">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-deducao">
+                                <label class="label-parcela" for="parcela">Dedução:</label>
+                                <span id="parcelaSpan"></span>
+                                <br>
+                                <label for="aliquota">Alíquota:</label>
+                                <span id="aliquotaSpan"></span>
+                                <br>
+                                <br>
+                                <label class="label-parcela" for="imposto-renda1">IR:</label>
+                                <span id="imposto-renda1" class="valor-total-plr"></span>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group valor-total-plr">
+                            <span>PLR Líquido:</span>
+                            <span id="resultado1"></span>
+                        </div>
+                        <div class="form-group btn-calcular">
+                            <button type="button" onclick="calculaPLR_semestre_1()">CALCULAR PLR</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <div class="container">
+                    <h2>Segunda Parcela <label>(SET/2023)</label></h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="plr2">PLR Bruto:</label>
+                            <input type="text" id="plr2" name="plr2" oninput="formatarValor(this)" required value="0,00">
+                        </div>
+        
+                        <div class="form-group">
+                            <div class="form-group-deducao">
+                                <label class="label-parcela" for="parcela">Dedução:</label>
+                                <span id="parcelaSpan2"></span>
+                                <br>
+                                <!-- <label for="dependentes1">Valor deduzido:</label> -->
+                                <label for="aliquota2">Alíquota:</label>
+                                <span id="aliquotaSpan2"></span>
+                                <br>
+                                <br>
+                                <label class="label-parcela" for="imposto-renda2">IR:</label>
+                                <span id="imposto-renda2" class="valor-total-plr"></span>
+                            </div>
+                            
+                        </div>
+        
+                        <div class="form-group valor-total-plr">
+                            <span>PLR Líquido:</span>
+                            <span id="resultado2"></span> <!-- Novo elemento para exibir o resultado -->
+                        </div>
+                        <div class="form-group btn-calcular">
+                            <button type="button" onclick="calculaPLR_semestre_2()">CALCULAR PLR</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <div class="container">
+                    <h2>Resumo<label>(2023)</label></h2>
+                    <form>
+                        <div class="form-group">
+                            <div class="form-group-deducao">
+                                <label class="label-parcela" for="parcela">1° PLR:</label>
+                                <span id="plr-periodo-1"></span>
+                                <br>
+                                <label for="aliquota2">2° PLR:</label>
+                                <span id="plr-periodo-2"></span>
+                                <br>
+                                <br>
+                                <label class="label-parcela" for="imposto-renda2">PLR Total:</label>
+                                <span id="plr-total" class="valor-total-plr"></span>
+                                
+                            </div>
+                            
+                        </div>
+        
+                        <div class="form-group ir total">
+                            <label class="label-parcela" for="imposto-renda2">IR Total:</label>
+                            <span id="imposto-renda-total" class="valor-total-plr"></span>
+                        </div>
+        
+                        <div class="form-group valor-total-plr">
+                            <span>PLR Líquido:</span>
+                            <span id="plr-liquido-total"></span>
+                        </div>
+                    </form>
+                </div>
+        
+                
+            </div>
+        </section>
+        
+    
+        <script src="script.js"></script>
+    
+    </main>
+    
+</body>
+
+</html>
