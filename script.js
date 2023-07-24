@@ -8,7 +8,7 @@ const faixas = [
 
 
 const faixasSegundoSemestre = [
-    { limite: 7407.12, aliquota: 0.0, parcelaDeduzir: 0 },
+    { limite: 7407.11, aliquota: 0.0, parcelaDeduzir: 0 },
     { limite: 9922.28, aliquota: 0.075, parcelaDeduzir: 555.53 },
     { limite: 13167, aliquota: 0.15, parcelaDeduzir: 1299.70 },
     { limite: 16380.38, aliquota: 0.225, parcelaDeduzir: 2287.23 },
@@ -32,16 +32,14 @@ function formatarValor(element) {
 
 function calculaPLR_semestre_1() {
 
+    // obtem o valor da 1° plr digitado
     let plrInput = document.getElementById("plr1").value;
+
+    // formata para valor numérico
     let plr1 = parseFloat(plrInput.replace(/\D/g, '').replace(',', '.')) / 100;
 
-    // Verifica se o valor é válido
-    //if (isNaN(plr1) || plrInput.trim() === '' || plr1 === 0) {
-    //    alert("Digite o valor bruto da primeira parcela de PLR");
-    //    return;
-    //}
 
-    // Iterar sobre as faixas e encontrar a correspondente ao valor do PLR
+    // Iterar sobre as faixas e encontrar a alíquota e parcela a deduzir correspondente ao valor do PLR
     for (const faixa of faixas) {
         if (plr1 <= faixa['limite']) {
         aliquota1 = faixa['aliquota'];
@@ -67,7 +65,7 @@ function calculaPLR_semestre_1() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 3
     });
 
 
@@ -76,13 +74,13 @@ function calculaPLR_semestre_1() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 3
     });
 
     // Exibe o resultado na página
     document.getElementById("resultado1").innerHTML = resultadoFormatado;
     document.getElementById("parcelaSpan").innerHTML = deducaoFormatada;
-    document.getElementById("aliquotaSpan").innerHTML =  `${(aliquota1 * 100).toFixed(2)}%`;
+    document.getElementById("aliquotaSpan").innerHTML =  `${(aliquota1 * 100).toFixed(1)}%`;
     document.getElementById("imposto-renda1").innerHTML = impostoFormatado;
 
     // Exibe o resultado total 
@@ -117,10 +115,18 @@ function calculaPLR_semestre_2() {
     let plr2 = parseFloat(segundoPLR_input.replace(/\D/g, '').replace(',', '.')) / 100;
 
 
-    impostoDeRenda1 = calculaPLR_semestre_1()[1];
-    plrLiquido1 = calculaPLR_semestre_1()[2];
+    let [plrLiquido1, impostoDeRenda1] = calculaPLR_semestre_1()
 
-    let plrTotal = plr1 + plr2;
+    
+    let plrTotal = (plr1 + plr2);
+
+    
+    console.log("PLR do primeiro semestre:", plr1);
+    console.log("Imposto de Renda do primeiro semestre:", impostoDeRenda1);
+    console.log("PLR liquido do primeiro semestre:", plrLiquido1);
+
+    console.log("PLR do segundo semestre:", plr2);    
+    console.log("PLR Total:", plrTotal);
 
     // Iterar sobre as faixas e encontrar a correspondente ao valor do PLR
     for (const faixa of faixasSegundoSemestre) {
@@ -131,6 +137,7 @@ function calculaPLR_semestre_2() {
         }
     }
     
+
     let impostoDeRendaTotal = (plrTotal * aliquota2) - deducao2; // imposto a pagar
     let impostoDeRenda2 = impostoDeRendaTotal - impostoDeRenda1; // imposto a pagar - imposto pago na parcela 1
     let plrLiquido2 = plr2 - impostoDeRenda2; // plr bruto 2 - imposto real = plr líquida
@@ -148,7 +155,7 @@ function calculaPLR_semestre_2() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 3
     });
 
     // Exibe o resultado na página
@@ -156,14 +163,14 @@ function calculaPLR_semestre_2() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 3
     });
 
 
 
     document.getElementById("resultado2").innerHTML = resultadoFormatado;
     document.getElementById("parcelaSpan2").innerHTML = deducaoFormatada;
-    document.getElementById("aliquotaSpan2").innerHTML =  `${(aliquota2 * 100).toFixed(2)}%`;
+    document.getElementById("aliquotaSpan2").innerHTML =  `${(aliquota2 * 100).toFixed(1)}%`;
     document.getElementById("imposto-renda2").innerHTML = impostoFormatado;
 
     // totais
@@ -191,7 +198,7 @@ function calculaPLR_semestre_2() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 3
     });
 
     let plrLiquidoAnualFormatado = (plrLiquidoAnual).toLocaleString('pt-BR', {
