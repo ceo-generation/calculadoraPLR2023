@@ -7,6 +7,15 @@ const faixas = [
   ];
 
 
+const faixasSegundoSemestre = [
+    { limite: 7407.11, aliquota: 0.0, parcelaDeduzir: 0 },
+    { limite: 9922.28, aliquota: 0.075, parcelaDeduzir: 500.82 },
+    { limite: 13167, aliquota: 0.15, parcelaDeduzir: 1244.99 },
+    { limite: 16380.38, aliquota: 0.225, parcelaDeduzir: 2232.51 },
+    { limite: Infinity, aliquota: 0.275, parcelaDeduzir: 3051.53 }
+  ];
+
+
 function formatarValor(element) {
     const valor = element.value.replace(/\D/g, ''); // Remove caracteres não numéricos
 
@@ -27,10 +36,10 @@ function calculaPLR_semestre_1() {
     let plr1 = parseFloat(plrInput.replace(/\D/g, '').replace(',', '.')) / 100;
 
     // Verifica se o valor é válido
-    if (isNaN(plr1) || plrInput.trim() === '' || plr1 === 0) {
-        alert("Digite o valor bruto da primeira parcela de PLR");
-        return;
-    }
+    //if (isNaN(plr1) || plrInput.trim() === '' || plr1 === 0) {
+    //    alert("Digite o valor bruto da primeira parcela de PLR");
+    //    return;
+    //}
 
     // Iterar sobre as faixas e encontrar a correspondente ao valor do PLR
     for (const faixa of faixas) {
@@ -97,7 +106,6 @@ function calculaPLR_semestre_1() {
 }
 
 
-
 function calculaPLR_semestre_2() {
 
     // PLR bruto 1
@@ -108,13 +116,6 @@ function calculaPLR_semestre_2() {
     let segundoPLR_input = document.getElementById("plr2").value;
     let plr2 = parseFloat(segundoPLR_input.replace(/\D/g, '').replace(',', '.')) / 100;
 
-    console.log(plr2)
-    // Verifica se o valor é válido
-    if (isNaN(plr2) || segundoPLR_input.trim() === '' || plr2===0) {
-        alert("Digite o valor bruto da segunda parcela de PLR");
-        return;
-    }
-
 
     impostoDeRenda1 = calculaPLR_semestre_1()[1];
     plrLiquido1 = calculaPLR_semestre_1()[2];
@@ -122,7 +123,7 @@ function calculaPLR_semestre_2() {
     let plrTotal = plr1 + plr2;
 
     // Iterar sobre as faixas e encontrar a correspondente ao valor do PLR
-    for (const faixa of faixas) {
+    for (const faixa of faixasSegundoSemestre) {
         if (plrTotal <= faixa['limite']) {
         aliquota2 = faixa['aliquota'];
         deducao2 = faixa['parcelaDeduzir'];
