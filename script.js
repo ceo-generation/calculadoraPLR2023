@@ -48,8 +48,11 @@ function calculaPLR_semestre_1() {
         }
     }
 
+    console.log(deducao1);
+    console.log(plr1);
+    console.log((plr1 * aliquota1));
 
-    let impostoDeRenda1 = (plr1 * aliquota1) - deducao1; // imposto a pagar
+    let impostoDeRenda1 = (plr1 * aliquota1).toFixed(2) - deducao1; // imposto a pagar
     let plrLiquido1 = plr1 - impostoDeRenda1; // imposto a pagar - plr bruto
 
     // Formata o resultado do PLR líquido
@@ -65,7 +68,7 @@ function calculaPLR_semestre_1() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 3
+        maximumFractionDigits: 2
     });
 
 
@@ -155,7 +158,7 @@ function calculaPLR_semestre_2() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 3
+        maximumFractionDigits: 2
     });
 
     // Exibe o resultado na página
@@ -163,7 +166,7 @@ function calculaPLR_semestre_2() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 3
+        maximumFractionDigits: 2
     });
 
 
@@ -198,7 +201,7 @@ function calculaPLR_semestre_2() {
         style: 'currency',
         currency: 'BRL',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 3
+        maximumFractionDigits: 2
     });
 
     let plrLiquidoAnualFormatado = (plrLiquidoAnual).toLocaleString('pt-BR', {
