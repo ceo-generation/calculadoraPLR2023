@@ -10,6 +10,7 @@ body {
   
   .container {
     width: 320px; /* Reduzindo a largura em 20% */
+    height: 484px; /* Define a altura para 300 pixels */
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
