@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
     background-color: #E3DCD2;
     display: flex;
     align-items: center; /* Centraliza verticalmente */
@@ -7,11 +8,31 @@ body {
     height: 100vh; /* Define a altura total da página */
     margin: 0;
   }  
-  
+
+  .header {
+    display: flex; /* Usar flexbox para alinhar elementos horizontalmente */
+    align-items: center; /* Centralizar verticalmente o conteúdo */
+
+  }
+
+  h1 {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    font-size: 25px;
+    flex: 1; /* Permite que o título ocupe o espaço restante horizontalmente */
+    margin-top: 20px; /* Remove o espaço superior padrão do título */
+    margin-right: 150px; /* Adicione uma margem à esquerda para mover o título para a esquerda */
+
+  }
+
+  img {
+    float: left;
+  }
+
+
   .container {
-    width: 320px; /* Reduzindo a largura em 20% */
-    height: 484px; /* Define a altura para 300 pixels */
-    padding: 20px;
+    width: 270px; /* Reduzindo a largura em 20% */
+    height: 410px; /* Define a altura */
+    padding: 10px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -20,30 +41,30 @@ body {
   
   .container h2 {
     text-align: center; /* Alinhar ao centro */
-    margin: 30px 1px 40px 1px;
+    margin: 20px 1px 40px 1px;
   }
   
   .container h2 label {
     color: #999999;
-    font-size: 12px;
+    font-size: 10px;
     font-family: 'Poppins', sans-serif;
     margin: -11px 0px 10px 15px;
   }
   
   .form-group {
-    margin-bottom: 40px; /* Dobrar a distância vertical */
+    margin-bottom: 6px; /* Dobrar a distância vertical */
   }
   
   .form-group label {
     display: inline-block; /* Torna o label inline */
-    width: 120px; /* Define uma largura fixa para o label */
+    width: 100px; /* Define uma largura fixa para o label */
     font-weight: bold;
     text-align: left; /* Alinhado à esquerda */
     vertical-align: middle; /* Centraliza verticalmente */
   }
   
   .form-group input {
-    width: 60%; /* Reduzindo o tamanho em 15% */
+    width: 50%; /* Reduzindo o tamanho em 15% */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -81,6 +102,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-top: 18px; /* Ajuste o valor conforme necessário para mover o botão para cima ou para baixo */
+
   }
   
   .form-group.btn-calcular button {

@@ -118,7 +118,7 @@ function calculaPLR_semestre_2() {
     let plr2 = parseFloat(segundoPLR_input.replace(/\D/g, '').replace(',', '.')) / 100;
 
 
-    let [plrLiquido1, impostoDeRenda1] = calculaPLR_semestre_1()
+    let [, impostoDeRenda1,plrLiquido1] = calculaPLR_semestre_1()
 
     
     let plrTotal = (plr1 + plr2);
