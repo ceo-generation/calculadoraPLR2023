@@ -6,7 +6,7 @@ body {
     display: flex;
     align-items: center; /* Centraliza verticalmente */
     justify-content: center;
-    height: 100vh; /* Define a altura total da página */
+    height: 95vh; /* Define a altura total da página */
     margin: 0;
   }  
 
@@ -20,13 +20,15 @@ body {
     text-align: center; /* Centraliza o texto horizontalmente */
     font-size: 25px;
     flex: 1; /* Permite que o título ocupe o espaço restante horizontalmente */
-    margin-top: 20px; /* Remove o espaço superior padrão do título */
+    margin-top: 150px; /* Remove o espaço superior padrão do título */
     margin-right: 150px; /* Adicione uma margem à esquerda para mover o título para a esquerda */
 
   }
 
   img {
     float: left;
+    margin-top: 120px; /* Remove o espaço superior padrão do título */
+
   }
 
 
